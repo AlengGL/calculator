@@ -90,19 +90,86 @@ button:active {
     color: black;
 }
 
+/* 當切換到 dark 模式時 */
 .calculator.dark {
-    background-color: black;
-    color: white;
+    width: 300px;
+    background-color: #20232a;
+    color: #61dafb;
+    border-color: #333;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.calculator.dark .display input {
+    background: #282c34;
+    color: #61dafb;
+    border-radius: 12px;
+}
+
+.calculator.dark .buttonGroup {
+    gap: 10px;
+}
+
+.calculator.dark .memory {
+    gap: 10px;
+}
+
+.calculator.dark .number {
+    gap: 10px;
+    /* 更改數字鍵的順序 */
+    grid-template-areas:
+        "seven eight nine"
+        "four five six"
+        "one two three"
+        "zero backspace dot";
+}
+
+.calculator.dark .number button[data-value="1"] { grid-area: one; }
+.calculator.dark .number button[data-value="2"] { grid-area: two; }
+.calculator.dark .number button[data-value="3"] { grid-area: three; }
+.calculator.dark .number button[data-value="4"] { grid-area: four; }
+.calculator.dark .number button[data-value="5"] { grid-area: five; }
+.calculator.dark .number button[data-value="6"] { grid-area: six; }
+.calculator.dark .number button[data-value="7"] { grid-area: seven; }
+.calculator.dark .number button[data-value="8"] { grid-area: eight; }
+.calculator.dark .number button[data-value="9"] { grid-area: nine; }
+.calculator.dark .number button[data-value="0"] { grid-area: zero; }
+.calculator.dark .number button[data-action="decimal"] { grid-area: dot; }
+.calculator.dark .number button[data-action="backspace"] { grid-area: backspace; }
+
+.calculator.dark .algorithm {
+    gap: 10px;
 }
 
 .calculator.dark button {
-    background-color: #333;
-    color: white;
+    background-color: #282c34;
+    color: #61dafb;
+    border-radius: 100px; 
+    border: 1px solid #444;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calculator.dark button:hover {
+    background-color: #404448;
+    color: #e0e0e0;
 }
 
 .calculator.dark button:active {
-    background-color: rgba(255, 255, 255, 0.434);
-    color: black;
-    transform: scale(0.8);;
+    background-color: #1f2128;
+    color: #ffffff;
+    transform: scale(0.95);
 }
 
+.calculator.dark .calculate-button {
+    background-color: #007acc;
+    color: #ffffff;
+    border-radius: 8px; 
+    transition: background-color 0.3s;
+}
+
+.calculator.dark .calculate-button:hover {
+    background-color: #005fa3;
+}
+
+.calculator.dark .calculate-button:active {
+    background-color: #004680;
+}
