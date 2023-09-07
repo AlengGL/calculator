@@ -1,4 +1,3 @@
-// 這是使用監聽方式 不使用function方法寫 下面有使用function的寫法//
 let currentInput = "0";
 let previousInput = "";
 let operation = null;
